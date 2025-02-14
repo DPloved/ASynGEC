@@ -59,7 +59,7 @@ If you want to train new models using your own dataset, please follow the instru
 
 + `preprocess_asyngec_*.sh`: preprocess data for training GEC models;
 
-+ `train_asyngec_*.sh`: train baseline & SynGEC models;
++ `train_asyngec_*.sh`: train baseline & ASynGEC models;
 
 + `generate_asyngec_*.sh`: generate results (CoNLL14 and BEA19 for English, NLPCC18 and MuCGEC for Chinese);
 

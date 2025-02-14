@@ -1,0 +1,67 @@
+
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    
+    
+
+        
+
+
+
+
+
+
+
+
+
+
+
+        {
+            "env": {"CUDA_VISIBLE_DEVICES":"1"},
+            "name": "debug",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "/home/liying/our-syn/src/src_syngec/fairseq-0.10.2/fairseq_cli/train.py",
+            "pythonPath": "/home/liying/anaconda3/envs/cixing/bin/python",
+            "console": "integratedTerminal",
+            "justMyCode": false ,
+            "args": [
+            "/home/liying/our-ci/preprocess/chinese_hsk+lang8_with_syntax_transformer/word_probs_pos" ,
+            "--save-dir", "/home/liying/our-ci/model/chinese_bart_baseline/2022/stage3",
+            "--user-dir", "/home/liying/our-ci/src/src_syngec/syngec_model",
+            "--task", "syntax-enhanced-translation",
+            "--arch", "syntax_enhanced_bart_large",
+            "--use-syntax",
+            "--only-gnn",           
+            "--freeze-bart-parameters",
+            "--syntax-encoder", "GCN",
+            "--finetune-from-model", "/home/liying/our-syn//model/chinese_bart_baseline/2022/mucgec_1/checkpoint_best.pt",
+            "--skip-invalid-size-inputs-valid-test", 
+            "--max-tokens", "2048",
+            "--optimizer", "adam",
+            "--max-source-positions", "512",
+            "--max-target-positions", "512",
+            "--max-sentence-length","128", 
+            "--lr", "3e-05",
+            "--warmup-updates", "4000",
+            "-s", "src",
+            "-t", "tgt",
+            "--lr-scheduler", "polynomial_decay",
+            "--criterion", "label_smoothed_cross_entropy",
+            "--label-smoothing", "0.1",
+            "--max-epoch", "60",
+            "--share-all-embeddings",
+            "--adam-betas", "[0.9, 0.999]",
+            "--log-format", "tqdm",
+            "--fp16", 
+            "--find-unused-parameters", 
+            "--keep-last-epochs", "10",
+            "--patience", "5",
+            "--seed", "2022"]
+        }
+    ]
+}

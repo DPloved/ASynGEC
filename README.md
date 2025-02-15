@@ -24,35 +24,6 @@ The ASynGEC model for GEC is based on [fairseq-0.10.2](https://github.com/facebo
 
 
 
-# How to Use
-
-## Description of Codes
-```
-|-- bash  # Some scripts to reproduce our results
-|   |-- chinese_exp
-|   `-- english_exp
-|-- data  # Data files (mainly parallel sentence files)
-|   |-- bea19_dev
-|   |-- bea19_test
-|   |-- clang8_train
-|   |-- conll14_test
-|   |-- dicts
-|   |-- error_coded_train
-|   |-- hsk+lang8_train
-|   |-- hsk_train
-|   |-- mucgec_dev
-|   |-- mucgec_test
-|   `-- wi_locness_train
-|-- model  # Model checkpoints for GOPar and SynGEC
-|   `-- asyngec
-|-- preprocess  # Preprocessed binary files for fairseq training
-|-- pretrained_weights  # Pretrained language models, e.g., BART
-|-- src  # Main codes of our GOPar and SynGEC models
-|   |-- src_asyngec
-|       |-- fairseq-0.10.2  # Our modified Fairseq. Specifically, we modify their trainer, modules, datasets, etc.
-|       `-- asyngec_model  # Main model files for SynGEC
-`-- utils  # Some important tools, including tree projection codes
-```
 
 # How to Train
 If you want to train new models using your own dataset, please follow the instructions in `./bash/*_exp`:
@@ -63,3 +34,8 @@ If you want to train new models using your own dataset, please follow the instru
 
 + `generate_asyngec_*.sh`: generate results (CoNLL14 and BEA19 for English, NLPCC18 and MuCGEC for Chinese);
 
+You can use the following commands to train:
+
+```
+sh train_asyngec_*.sh
+```
